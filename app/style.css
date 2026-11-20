@@ -1,0 +1,93 @@
+/* Palm Light editor — dark violet chrome around the poster preview. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #12041f;
+  color: #f4eaff;
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+}
+#editor { max-width: 1440px; margin: 0 auto; padding: 18px 20px 28px; }
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffe45c, #ff9a3d, #ff4d8d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+header h1 span {
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #c9a8e0;
+  -webkit-text-fill-color: #c9a8e0;
+}
+header p { margin: 4px 0 16px; color: #c9a8e0; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+#stage { min-width: 0; }
+#preview {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid #5b2a7d;
+  border-radius: 6px;
+  cursor: grab;
+  touch-action: none;
+  background: #1c0530;
+}
+#preview:active { cursor: grabbing; }
+#status { color: #ffd7ec; margin: 10px 0 2px; min-height: 1.4em; }
+.hint { color: #9d7fb8; margin: 0; font-size: 13px; }
+#controls fieldset {
+  border: 1px solid #5b2a7d;
+  border-radius: 8px;
+  margin: 0 0 14px;
+  padding: 12px;
+}
+#controls legend { color: #ffc400; font-weight: 800; letter-spacing: 1px; padding: 0 6px; }
+#controls label { display: block; margin: 8px 0; font-size: 13px; color: #d9c2ec; }
+#controls label span { float: right; color: #ffc400; }
+#controls input[type="text"], #controls input[type="range"] { width: 100%; }
+#controls input[type="text"] {
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid #5b2a7d;
+  border-radius: 5px;
+  background: #1c0530;
+  color: #fff;
+  font: inherit;
+}
+#panels { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+#panels button {
+  padding: 7px 6px;
+  border: 1px solid #5b2a7d;
+  border-radius: 5px;
+  background: #22103a;
+  color: #d9c2ec;
+  font: 700 11px/1.3 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-align: left;
+}
+#panels button.active { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+.file { cursor: pointer; }
+.file input { display: block; margin-top: 4px; font-size: 12px; }
+.choices { display: flex; gap: 14px; flex-wrap: wrap; }
+.choices label { display: inline-flex; gap: 5px; align-items: center; margin: 2px 0; color: #f4eaff; }
+#export {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff9a3d, #ff2e88);
+  color: #fff;
+  font: 900 17px Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+#export:hover { filter: brightness(1.12); }
+#editor > footer { margin-top: 18px; color: #9d7fb8; font-size: 13px; }
+#shot { display: block; margin: 0 auto; max-width: 100vw; max-height: 100vh; }
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+}
